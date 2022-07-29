@@ -3,6 +3,7 @@ package com.example.koin_example
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.annotation.ComponentScan
 import org.koin.core.annotation.Module
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 @Module
@@ -14,9 +15,9 @@ class AppModule {
         single<HelloRepository> { HelloRepositoryImpl() }
 
         // Simple Presenter Factory
-        factory { MySimplePresenter(get()) }
+        factory(named("named1")) { MySimplePresenter(get()) }
 
         // MyViewModel ViewModel
-        viewModel { MyViewModel(get()) }
+        viewModel(named("named2")) { MyViewModel(get()) }
     }
 }
