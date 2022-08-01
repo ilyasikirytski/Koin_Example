@@ -7,7 +7,7 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 @Module
-@ComponentScan("org.koin.sample")
+@ComponentScan("com.example.koin_example")
 class AppModule {
     val appModule = module {
         //     Classical DSL
